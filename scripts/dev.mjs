@@ -1,0 +1,10 @@
+import {execFileSync} from 'node:child_process';import http from 'node:http';import fs from 'node:fs';import {DatabaseSync} from 'node:sqlite';
+execFileSync(process.execPath,['scripts/build.mjs']);
+const sqlite=new DatabaseSync('.openai/preview.sqlite');sqlite.exec('PRAGMA foreign_keys=ON');
+if(!sqlite.prepare("SELECT name FROM sqlite_master WHERE name='rooms'").get())sqlite.exec(fs.readFileSync('drizzle/0000_multiplayer.sql','utf8'));
+import {adapter} from './sqlite-adapter.mjs';
+sqlite.exec('CREATE TABLE IF NOT EXISTS preview_migrations(name TEXT PRIMARY KEY)');
+for(const file of fs.readdirSync('drizzle').filter(x=>x.endsWith('.sql')&&!x.startsWith('0000'))){if(!sqlite.prepare('SELECT name FROM preview_migrations WHERE name=?').get(file)){sqlite.exec(fs.readFileSync('drizzle/'+file,'utf8'));sqlite.prepare('INSERT INTO preview_migrations(name) VALUES(?)').run(file);}}
+const db=adapter(sqlite);let worker=(await import('../dist/server/index.js?'+Date.now())).default,updated=0;
+http.createServer(async(req,res)=>{try{const newest=Math.max(...['worker/api.js','worker/analytics.js',...fs.readdirSync('web').map(x=>'web/'+x)].map(x=>fs.statSync(x).mtimeMs));if(newest>updated){execFileSync(process.execPath,['scripts/build.mjs']);worker=(await import('../dist/server/index.js?'+Date.now())).default;updated=newest;}
+const chunks=[];for await(const c of req)chunks.push(c);const request=new Request('http://'+req.headers.host+req.url,{method:req.method,headers:req.headers,...(!['GET','HEAD'].includes(req.method)?{body:Buffer.concat(chunks)}:{})});const response=await worker.fetch(request,{DB:db,ADMIN_PASSWORD:process.env.ADMIN_PASSWORD||'local-preview-only',ADMIN_SESSION_SECRET:process.env.ADMIN_SESSION_SECRET||'local-preview-session-secret-not-for-production'});res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));}catch(e){console.error(e);res.writeHead(500);res.end('Preview error');}}).listen(Number(process.env.PORT)||4173,'0.0.0.0');

@@ -1,0 +1,53 @@
+import assert from 'node:assert/strict';
+import '../web/challenges.js';
+import '../web/progression-core.js';
+
+const monday=Date.UTC(2026,9,26),day=86400000;
+const p=Career.fresh(monday),rows=Challenges.board(monday);
+const daily=rows.find(d=>d.kind==='cones'&&!d.weekly);
+const weekly=rows.find(d=>d.machine&&d.weekly);
+const streak=rows.find(d=>d.kind==='streak');
+const recovery=rows.find(d=>d.repeatable);
+const {config}=Career.campaign;
+assert.equal(recovery.reward,config.recoveryCoins);
+assert.equal(recovery.goal,2);
+assert(rows.every(d=>d.reward>0));
+p.coins=0;
+assert.equal(Challenges.startRun(p,daily.id,monday),1);
+assert.equal(Challenges.startRun(p,daily.id,monday),2);
+assert.equal(p.coins,0);
+assert(!Challenges.finishRun(p,daily.id,1,monday));
+assert(Challenges.finishRun(p,daily.id,2,monday));
+assert(!Challenges.finishRun(p,daily.id,2,monday));
+assert.equal(Challenges.startRun(p,daily.id,monday),0);
+assert.equal(p.challenges.pending,daily.reward);
+assert.equal(Challenges.startRun(p,weekly.id,monday+day),1);
+assert(!Challenges.finishRun(p,weekly.id,1,monday+7*day));
+for(const kind of ['quick','club','online','training'])Challenges.result(p,kind,true,0,monday);
+assert(!p.challenges.progress[streak.id]);
+for(const won of [true,true,false,true,true,true,false])Challenges.result(p,'campaign',won,0,monday);
+assert.equal(p.challenges.progress[streak.id].value,3);
+const credits=p.challenges.pending;
+const next=Career.load(p,monday+day);
+assert(!next.challenges.progress[daily.id]);assert.equal(next.challenges.progress[weekly.id].value,0);
+assert.equal(next.challenges.pending,credits);
+assert.equal(Challenges.claim(next),credits);assert.equal(Challenges.claim(next),0);
+assert.equal(next.coins,credits);
+assert(!Career.load(next,monday+7*day).challenges.progress[streak.id]);
+
+const zero=Career.fresh();zero.coins=0;
+const before=Career.campaign.next(zero);
+assert.equal(Career.campaign.enter(zero),null);
+for(let i=1;i<=3;i++){
+ assert.equal(Challenges.startRun(zero,recovery.id,monday),i);
+ assert(Challenges.finishRun(zero,recovery.id,i,monday));
+ zero.challenges=Challenges.load(zero.challenges,monday+30*day);
+ assert(!Challenges.finishRun(zero,recovery.id,i,monday+30*day));
+ assert.equal(zero.coins,i*config.recoveryCoins);
+ assert.equal(Challenges.claim(zero),0,'instant recovery payment must not be claimable twice');
+}
+const resumed=Career.campaign.enter(zero);
+assert.equal(resumed.rung,before.rung);
+assert.deepEqual(resumed.ids,before.ids);
+assert.equal(zero.coins,3*config.recoveryCoins-before.fee);
+console.log('PASS daily and weekly UTC challenges, free retries, repeatable recovery, reload without duplicate coins, no Free Play earnings, campaign streak and return to rung');

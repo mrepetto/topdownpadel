@@ -1,0 +1,12 @@
+{
+  "name": "padelmaster",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node tests/controls.cjs && node tests/menu.cjs && node tests/character-art.cjs && node tests/portrait-assets.mjs && node tests/physics.cjs && node tests/match.cjs && node tests/multiplayer.mjs && node tests/relay-performance.mjs && node tests/progression.cjs && node tests/progression-flow.cjs && node tests/practice.cjs && node tests/club-art.cjs && node tests/skins.mjs && node tests/challenges.mjs && node tests/bags.mjs && node tests/campaign-bags.mjs && node tests/store.mjs",
+    "build:desktop": "node scripts/build.mjs desktop",
+    "build:mobile": "node scripts/build.mjs mobile"
+  }
+}

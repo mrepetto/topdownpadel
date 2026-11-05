@@ -1,0 +1,426 @@
+/* Opt-in phone layout, including a boxed preview on desktop. */
+body.portrait{width:min(100vw,56.25dvh);height:min(177.7778vw,100dvh)}
+body.portrait #intro #meta-screen{width:100%;height:100%;aspect-ratio:auto;padding:3cqw;grid-template-rows:auto minmax(0,1fr) auto;gap:2cqw}
+.portrait .meta-header{flex-wrap:wrap;gap:5px}.portrait .meta-wallet{margin-left:auto}
+.portrait .meta-content,.portrait #meta-screen[data-view=home] .meta-content{overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
+.portrait .meta-footer,.portrait .meta-utilities{flex-wrap:wrap;gap:5px}
+.portrait .meta-footer button,.portrait .menu-navigation button,.portrait #meta-screen .meta-footer>.primary{width:auto;min-width:0;max-width:100%;padding:8px 10px;min-height:40px;font-size:15px}
+.portrait .meta-save,.portrait .control-strip{display:none}
+.portrait #meta-screen[data-view=home] .meta-header h1{width:60cqw;max-width:60cqw}
+.portrait .lobby-character{inset:15% -8% auto auto;width:68%;height:58%}
+.portrait .lobby-layout{flex-direction:column;align-items:stretch;justify-content:flex-end;min-height:max-content;gap:8px}
+.portrait .lobby-menu{width:68%;gap:5px}.portrait .lobby-menu button{min-height:40px!important;font-size:19px!important;padding:7px 12px!important}
+.portrait .lobby-player{position:static;align-self:flex-end;display:flex;align-items:center;gap:6px;padding:6px}.portrait .lobby-player>span,.portrait .lobby-player p{display:none}.portrait .lobby-player h2{font-size:23px}
+.portrait .lobby-eyebrow,.portrait .lobby-player button{font-size:17px!important}
+.portrait #intro #meta-screen[data-view=splash]{display:flex;align-items:flex-end}
+.portrait #intro #meta-screen[data-view=splash]::before{background-position:right top;background-size:auto 54%;background-repeat:no-repeat}
+.portrait .splash-content{justify-content:flex-end;width:100%;gap:10px;padding:5%;background:linear-gradient(transparent 32%,#061928ef 78%)}
+.portrait .splash-content .splash-logo{width:75%}.portrait .splash-headline{font-size:12cqw}.portrait .splash-content .splash-tagline,.portrait #meta-screen .splash-content>button{font-size:20px}.portrait .splash-content .splash-developer{font-size:14px}
+.portrait :is(.control-mode-grid,.club-brief,.quick-setup,.training-modes,.training-options,.training-tuning,.match-preview,.credits-content,.practice-options,.online-options,.store-packs,.challenge-grid,.challenge-grid.week,.meta-clubs){grid-template-columns:minmax(0,1fr);height:auto;gap:10px;grid-auto-rows:auto}
+.portrait :is(.challenge-board,.coin-store,.quick-options,.training-mode,.match-court-panel){height:auto;min-height:0}
+.portrait .challenge-tabs,.portrait .bracket-tools{flex-wrap:wrap;height:auto}.portrait .challenge-card,.portrait .meta-club{min-height:90px!important}.portrait .challenge-copy strong,.portrait .meta-club h2{font-size:22px}
+.portrait .collection-stage{grid-template-columns:1fr 1fr;height:auto;gap:8px}.portrait .collection-roster{grid-column:1/-1}.portrait .collection-grid{grid-template-columns:repeat(6,1fr);grid-template-rows:none;grid-auto-rows:54px}.portrait .collection-showcase{min-height:200px}.portrait .collection-personality{max-width:none}
+.portrait :is(.stake-grid,.reveal-grid){grid-template-columns:repeat(2,minmax(0,1fr));height:auto}.portrait .match-squad article{height:84px}.portrait .match-court{height:40cqw}
+.portrait .tournament-bracket{min-width:600px;height:320px}.portrait .bracket-match{height:34px}
+.portrait #meta-screen :is(h3,.challenge-count){font-size:max(16px,3.5cqw)}.portrait #meta-screen :is(p,small,.meta-stat,.club-gates,.challenge-copy span){font-size:max(13px,2.7cqw)}
+.portrait .game-header{height:18%;min-height:0}.portrait>main{height:82%}
+.portrait .hud-identity{position:absolute;top:0;left:2%;height:29%;max-width:47%;gap:4px}.portrait .hud-identity .brand img{width:21cqw;height:auto}.portrait #club-hud img{width:7cqw;height:7cqw}
+.portrait .quick-actions{top:1%;right:2%;left:auto}.portrait .quick-actions button{width:32px;height:32px;min-height:30px}
+.portrait .scoreboard{left:2%;top:33%;transform:none;width:73%;height:64%;grid-template-columns:minmax(0,1fr) 18% 18%;grid-template-rows:18% 39% 39%;gap:0 2px;padding:2px 4px}
+.portrait .scoreboard .score-caption{position:static;transform:none;width:auto;grid-column:1;grid-row:1;font-size:10px;padding:0;justify-content:start;border:0}
+.portrait .scoreboard .team{font-size:13px}.portrait .score-cell{font-size:17px}.portrait .score-head{font-size:9px}.portrait .score-head:first-child{visibility:hidden}
+.portrait .scoreboard :is(#g0,#g1){grid-column:2}.portrait .scoreboard :is(#s0,#s1){grid-column:3}
+.portrait #combo{left:77%;right:2%;top:34%;width:auto}.portrait #rally{font-size:22px}.portrait #rally-heat{min-width:0}.portrait .pace-label{font-size:9px}
+.portrait .touch{position:absolute;display:flex;justify-content:space-between;align-items:flex-end;bottom:1%;left:2%;right:2%;pointer-events:none}.portrait .touch button,.portrait #stick{pointer-events:auto;touch-action:none}.portrait .touch button{min-width:40px;min-height:44px;font-size:14px}
+.portrait :is(.menu-card,.point-card,dialog){width:94%;max-width:100%;max-height:94%;overflow:auto;box-sizing:border-box}.portrait .menu-card{padding:12px}.portrait .menu-grid{grid-template-columns:1fr 1fr}.portrait .menu-card .pause-navigation>button{min-width:0}
+.portrait #multiplayer[open],.portrait .practice-screen{overflow:auto}.portrait .practice-shell{width:100%;height:auto;min-height:94%;padding:10px}.portrait .practice-options{display:grid}
+.portrait .practice-shell footer,.portrait .room-footer{flex-wrap:wrap}.portrait #practice-hud{left:2%;right:2%;padding:5px 8px}.portrait .drill-order{font-size:clamp(23px,7cqw,42px)}
+
+.portrait .scoreboard .score-head:nth-child(3){grid-column:2}.portrait .scoreboard .score-head:nth-child(4){grid-column:3}
+body.portrait.practice-active .game-header{height:10%}body.portrait.practice-active>main{height:90%}
+
+/* Court fills the vertical frame; the HUD occupies its two narrow end margins. */
+body.portrait>main,body.portrait.practice-active>main{position:absolute;inset:0;width:100%;height:100%;padding:0}
+body.portrait .game-header{position:absolute;inset:0 0 auto;height:9%;z-index:5;background:linear-gradient(#071727ee,#071727b0 80%,transparent);pointer-events:none}
+.portrait .game-header .quick-actions{pointer-events:auto;top:4px}
+.portrait .game-header .hud-identity{display:none}
+.portrait .game-header .scoreboard{top:3px;left:2%;width:61%;height:94%;background:transparent;border:0;box-shadow:none;grid-template-rows:20% 40% 40%;grid-template-columns:minmax(0,1fr) 18% 18%}
+.portrait .game-header .team{font-size:clamp(13px,3.6cqw,21px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.portrait .game-header .score-cell{font-size:clamp(16px,4.5cqw,25px);line-height:1}
+.portrait .game-header #combo{left:66%;right:auto;top:12%;width:11%;margin:0}
+.portrait .game-header #rally-heat{display:none}
+.portrait .game-header .quick-actions button{width:8cqw;min-width:28px;height:8cqw}
+.portrait .touch{bottom:0;align-items:flex-end}.portrait .gamehud{display:none}
+.portrait #practice-hud{background:#091f31d9;border:0;top:1%;padding:5px 10px;border-radius:3px}
+.portrait #practice-hud .coach-copy span{font-size:clamp(15px,3.7cqw,22px)}.portrait #practice-hud .coach-copy small{display:none}
+.portrait .drill-hit{top:9%}
+
+/* One hero area above a thumb-friendly menu. */
+.portrait #meta-screen[data-view=home] .meta-header{display:grid;grid-template-columns:1fr;justify-items:center;gap:1.5cqw}
+.portrait #meta-screen[data-view=home] .meta-header h1{width:74cqw;max-width:none}
+.portrait #meta-screen[data-view=home] .meta-header p{display:none}
+.portrait #meta-screen[data-view=home] .meta-wallet{margin:0;justify-content:center}
+.portrait #meta-screen[data-view=home] .lobby-layout{height:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;gap:2cqw}
+.portrait #meta-screen[data-view=home] .lobby-character{inset:13% 1% auto auto;width:62%;height:42%}
+.portrait #meta-screen[data-view=home] .lobby-player{order:-1;align-self:flex-start;display:block;padding:2cqw;background:#0c233bd9}
+.portrait #meta-screen[data-view=home] .lobby-player h2{font-size:clamp(22px,6cqw,37px)}
+.portrait #meta-screen[data-view=home] .lobby-menu{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6cqw}
+.portrait #meta-screen[data-view=home] .lobby-eyebrow,.portrait #meta-screen[data-view=home] .lobby-menu button:nth-of-type(-n+2){grid-column:1/-1}
+.portrait #meta-screen[data-view=home] .lobby-menu button{font-size:clamp(17px,4.9cqw,30px)!important;padding:2cqw 3cqw!important;min-height:max(42px,10cqw)!important}
+.portrait #meta-screen[data-view=home] .lobby-menu button:nth-of-type(-n+2){font-size:clamp(21px,6cqw,35px)!important;min-height:max(46px,12cqw)!important}
+.portrait #meta-screen[data-view=home] .meta-utilities{display:grid;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:1cqw}
+.portrait #meta-screen[data-view=home] .meta-utilities button{min-width:0;max-width:100%;padding:3px;font-size:clamp(12px,3.3cqw,19px)}
+body.portrait .game-header{display:block;padding:0}
+body.portrait .game-header .scoreboard,body.portrait .game-header #combo{position:absolute}
+body.portrait .game-header .quick-actions{left:auto;right:2%;bottom:auto;gap:2px}
+body.portrait #toast{top:9%}
+
+
+/* Phone menu frame. Header and actions stay in reach while long lists scroll. */
+@media (orientation:portrait) {
+ body.portrait{width:100vw;height:100dvh}
+}
+body.portrait #intro #meta-screen{
+ padding:max(12px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
+ grid-template-rows:auto minmax(0,1fr) auto;gap:10px
+}
+.portrait #meta-screen .meta-header{align-items:flex-start;gap:8px;padding-bottom:10px}
+.portrait #meta-screen .meta-header h1{font-size:clamp(26px,7cqw,40px);line-height:1}
+.portrait #meta-screen .meta-wallet{gap:5px}
+.portrait #meta-screen .meta-wallet>*{min-height:36px;padding:5px 9px;font-size:16px}
+.portrait #meta-screen .meta-content{overflow:auto;min-width:0;scrollbar-width:thin}
+.portrait #meta-screen :is(button,select,input){max-width:100%;white-space:normal;line-height:1.12}
+.portrait #meta-screen .meta-footer{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid #526f805c;padding-top:8px}
+.portrait #meta-screen .meta-footer>button,.portrait #multiplayer .room-footer>button,.portrait .practice-shell footer>button,.portrait .menu-card .pause-navigation>button{flex:1 1 0;min-width:0;max-width:100%;width:auto;min-height:44px;padding:8px;font-size:17px;white-space:normal}
+.portrait .meta-footer .meta-notice:empty{display:none}
+.portrait #meta-screen:is([data-view=home],[data-view=collection],[data-view=quick-menu],[data-view=training],[data-view=credits]) .meta-header p,.portrait .lobby-eyebrow,.portrait .mode-demo,.portrait .mode-footnote,.portrait .stake-footer-note{display:none}
+.portrait #meta-screen[data-view=home] .meta-header{display:flex;align-items:center;justify-content:space-between}
+.portrait #meta-screen[data-view=home] .meta-header h1{width:32cqw}
+.portrait #meta-screen[data-view=home] .lobby-character{height:48%;width:83%;inset:7% -1% auto auto}
+.portrait #meta-screen[data-view=home] .lobby-layout{min-height:100%;height:auto;gap:8px}
+.portrait #meta-screen[data-view=home] .lobby-player{max-width:52%;padding:8px}
+.portrait #meta-screen[data-view=home] .meta-utilities button{font-size:14px;min-height:42px}
+.portrait .splash-content .splash-logo{width:90%}
+.portrait .training-modes.mode-pair,.portrait .control-mode-grid,.portrait .online-options{display:grid;grid-template-columns:1fr;align-content:center;gap:12px}
+.portrait #meta-screen .training-mode,.portrait .control-mode-card{height:auto;min-height:0;padding:16px!important;gap:6px}
+.portrait .training-mode strong,.portrait .control-mode-card h2{font-size:26px}
+.portrait .training-mode>span{font-size:16px}
+.portrait .control-mode-card ul{margin:6px 0;padding-left:18px;font-size:15px}
+.portrait .meta-clubs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.portrait #meta-screen .meta-club{padding:10px!important}
+.portrait #meta-screen .meta-club :is(span,strong,small){font-size:14px}
+.portrait .club-brief,.portrait .quick-setup,.portrait .match-preview{display:grid;height:auto;grid-template-columns:1fr}
+.portrait .quick-player{display:flex;align-items:center;height:100px}
+.portrait .stake-athlete{position:relative;inset:auto;width:30%;height:100%}
+.portrait .stake-player-info{position:static}.portrait .quick-player .stake-stats{display:none}
+.portrait .quick-reveal{grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(150px,1fr)) auto;gap:8px}
+.portrait .quick-reveal .reveal-details{grid-column:1/-1}
+.portrait .tournament-bracket{display:grid;grid-template-columns:1fr;height:auto;min-width:0;gap:12px}
+.portrait .bracket-matches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;height:auto}
+.portrait .bracket-lines{display:none}.portrait .bracket-column .bracket-match{position:static;transform:none;width:auto;height:auto;min-height:45px;font-size:15px}
+.portrait .collection-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-content:start;gap:8px}
+.portrait .collection-roster{grid-row:2;grid-column:1/-1;padding:0}
+.portrait .collection-showcase,.portrait .collection-info{grid-row:1;min-width:0}
+.portrait .collection-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:68px}
+.portrait .collection-tile-name{font-size:15px;height:20px}.portrait .collection-info h2{font-size:26px}
+.portrait #training-editor,.portrait #room-slots{height:auto}
+.portrait .versus-lineup{display:grid;grid-template-columns:1fr;gap:5px;height:auto}
+.portrait .lineup-team>div{gap:8px}.portrait .lineup-player{padding:7px}
+.portrait .lineup-art{height:58px;flex:none}.portrait .lineup-art img{height:100%;object-fit:contain}
+.portrait .lineup-vs{font-size:18px}.portrait .lineup-format{height:auto;flex-wrap:wrap;gap:6px;padding:8px 0}
+.portrait .challenge-grid,.portrait .challenge-grid.week,.portrait .store-packs{grid-template-columns:1fr;grid-auto-rows:auto}
+.portrait .challenge-tabs{gap:5px}.portrait .challenge-tabs button{min-height:42px}
+.portrait #multiplayer[open]{width:96%;height:94%;max-height:94%;padding:14px;overflow:auto}
+.portrait #multiplayer #room-lobby{flex:none}
+.portrait #multiplayer :is(.join-row,.invite-row){display:flex;height:auto;gap:6px}
+.portrait #multiplayer :is(.join-row,.invite-row) input{min-width:0;flex:1}
+.portrait #multiplayer :is(.join-row,.invite-row) button{width:auto;max-width:42%}
+body.portrait dialog:not(#multiplayer){width:94%;max-height:88dvh;overflow:auto;padding:16px}
+.portrait :is(.menu-card,.point-card,.practice-shell){max-width:100%;padding:14px}
+.portrait .menu-card .duration-option{grid-template-columns:1fr 1fr;font-size:16px}
+.portrait .control-settings,.portrait .playbook,.portrait .playbook-tips{grid-template-columns:1fr}
+.portrait .practice-screen{padding:12px}.portrait .practice-shell{gap:8px}.portrait .practice-mini-court{height:115px}
+.portrait .practice-shell footer{margin-top:auto;gap:6px}
+.portrait #practice-hud{top:max(8px,env(safe-area-inset-top));font-size:15px}
+.portrait .point-card #point-score{font-size:clamp(46px,14cqw,70px)}
+.portrait :is(.meta-reward,.meta-confirm,.quick-result,.credits-content){max-width:100%;height:auto}
+.portrait :is(.meta-reward,.meta-confirm,.quick-result) h2{font-size:30px}
+.phone-gestures{display:none}
+html:lang(en) body.portrait .phone-gestures[lang=en],html:lang(es) body.portrait .phone-gestures[lang=es]{display:grid;gap:8px}
+.portrait #rules .phone-gestures p{margin:0;padding:10px 12px;background:#173245;font-size:16px;line-height:1.3}
+.portrait .phone-gestures b{display:block;color:var(--lime,#dbff56);font-size:20px}
+.portrait #rules :is(.playbook,.playbook-tips,.finisher-guide){display:none}
+.portrait #meta-screen .meta-content{overflow-x:hidden}
+.portrait #meta-screen[data-view=home] .mode-switch{font-size:14px}
+
+/* Phone type roles use CSS pixels. The priority layer beats the legacy
+   landscape button overrides without changing their cascade on tablets. */
+@layer phoneType {
+ body.portrait :is(#meta-screen,#multiplayer,.practice-shell,.menu-card,#practice-hud) :is(p,li,small,label,output,select,input,.meta-stat,.bracket-team,.club-win,.player-price,.skin-edition,.collection-status,.collection-price,.collection-access,.collection-legend,.lineup-position,.training-speed,.practice-speed,.store-footer-note,.bracket-tools,.bracket-caption,.challenge-tabs,.online-card-note,.quick-court,.prize-total,.prize-first,.store-bottom,.pack-top,.stake-summary span,.pack-amount span,.control-mode-card>span,.stake-tier-name,.stake-tier>span,.quick-player span,.coach-copy b,.coach-actions em){font-size:18px!important;line-height:1.25!important}
+ body.portrait :is(#meta-screen,#multiplayer,.practice-shell,#practice-hud,.menu-card) button{font-size:20px!important;line-height:1.15!important}
+ body.portrait :is(.bracket-tools,.bracket-team,.prize-row,.prize-total,.prize-first,.challenge-tabs,.store-bottom,.pack-top,.club-win,.stake-summary p,.meta-training-level,.training-speed,.practice-speed,.online-name) :is(span,b,strong,output){font-size:inherit!important}
+ body.portrait :is(#meta-screen,#multiplayer) :is(.quick-options h2,.quick-player h2,.store-pack h2,.lineup-player h3,.prize-total strong,.stake-summary strong,.challenge-reward){font-size:21px!important}
+ body.portrait :is(.stake-tier,.pack-amount)>strong{font-size:26px!important}
+ body.portrait :is(.collection-ownership,.collection-tile>small,.bracket-match small,.lineup-player header,.lineup-player header span,.lineup-player header b,.quick-reveal .reveal-front span){font-size:17px!important}
+ body.portrait .lobby-menu button,body.portrait .control-mode-card button{font-size:20px!important}
+ body.portrait .meta-utilities button{font-size:17px!important}
+ body.portrait .meta-header h1{font-size:clamp(25px,7cqw,38px)!important}
+ body.portrait .game-header :is(.score-head,.score-caption,#combo-label){font-size:15px!important;line-height:1!important}
+ body.portrait :is(#room-code,#copy-invite,.join-row button){font-size:18px!important}
+}
+.portrait #meta-screen .meta-wallet button{min-width:44px;min-height:40px}
+.portrait #meta-screen .meta-wallet [data-meta=controls]{width:auto;padding:6px 9px}
+.portrait .meta-wallet .currency-icon{width:22px;height:22px}
+.portrait .meta-header>div:first-child{min-width:0}
+.portrait #meta-screen[data-view=home] .meta-header h1{width:clamp(82px,29cqw,155px)}
+.portrait #meta-screen :is(.control-mode-grid,.quick-setup,.training-tuning,.store-packs,.meta-clubs,.challenge-grid,.match-preview,.club-brief){height:auto;min-height:0;grid-template-columns:minmax(0,1fr)}
+.portrait #meta-screen :is(.control-mode-card,.store-pack,.meta-club,.challenge-card,.bracket-column){min-width:0;height:auto}
+.portrait #meta-screen .control-mode-card p,.portrait #meta-screen .control-mode-card>span{display:none}
+.portrait #meta-screen .control-mode-card h3{margin:4px 0}
+.portrait #meta-screen .stake-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.portrait #meta-screen .stake-tier{min-height:88px;display:grid;grid-template-columns:1fr 1fr;align-content:center}
+.portrait #meta-screen .stake-tier-name{grid-column:1/-1;white-space:normal}
+.portrait .stake-tier .stake-coins{display:none}
+.portrait .stake-tier small{grid-column:1/-1}
+.portrait #meta-screen .stake-summary{flex-wrap:wrap;gap:6px;padding:8px}
+.portrait .stake-summary p{flex-basis:100%}
+.portrait #meta-screen .training-tuning{gap:8px}
+.portrait .training-tuning :is(.meta-training-level,.training-speed),.portrait .practice-speed{height:auto;min-height:44px;gap:8px}
+.portrait .lineup-art{height:72px}
+.portrait :is(.meta-header p,.credits-signature,.bracket-team span){overflow-wrap:anywhere}
+.portrait .bracket-team span{white-space:normal}
+.portrait #meta-screen .bracket-match{grid-template-rows:auto auto auto;gap:3px;padding:6px;min-width:0}
+.portrait .bracket-tools>div,.portrait .bracket-caption{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.portrait .match-preview .match-court-panel{order:-1}
+.portrait #meta-screen .match-squad article{height:auto;min-height:88px}
+.portrait .match-position span,.portrait .match-position strong{font-size:14px}
+.portrait .bracket-id{display:block;color:#b6d9e4;font-size:14px}
+.bracket-id{display:none}
+.portrait #meta-screen .collection-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(84px,auto)}
+.portrait .collection-edition.skin-edition{position:static;text-align:center}
+.portrait .store-bottom{flex-direction:column;align-items:flex-start;padding:8px 0}
+.portrait .store-pack .pack-art{height:68px;flex:none}
+.portrait .challenge-tabs{height:auto;gap:6px}.portrait .challenge-tabs button{flex:1}
+.portrait #challenge-reset{font-size:15px}
+.portrait #multiplayer .online-name{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.portrait #multiplayer .online-name input{width:100%;min-height:40px}
+.portrait #multiplayer .online-card-note,.portrait #multiplayer .online-card ul{display:none}
+.portrait .game-header #combo{left:63%;width:16%;top:2px}
+.portrait .game-header #rally-heat{display:block;width:100%;height:7px;margin:2px 0}
+.portrait .game-header .pace-label{display:none}
+.portrait .game-header .team{white-space:normal;line-height:1;overflow-wrap:anywhere}
+.portrait .point-card .result-navigation>button{white-space:normal;padding:10px;max-width:100%;min-width:0;flex:1}
+.portrait .point-card .result-teams{font-size:16px;gap:8px}
+.portrait #practice-hud .coach-copy small{display:block;font-size:14px}
+.portrait #panel-controls #mouse-cursor,.portrait #panel-controls .menu-grid:has(#mouse-cursor){display:none}
+.portrait .phone-gestures details{padding:10px 12px;background:#173245;font-size:16px}
+.portrait .phone-gestures summary{cursor:pointer;font-weight:bold;color:#dbff56}
+.portrait #rules .power-guide{display:none}
+.portrait #meta-screen .store-pack{display:grid;grid-template-columns:74px minmax(0,1fr);align-items:center;gap:4px 10px;padding:10px}
+.portrait .store-pack .pack-top{grid-column:1/-1}
+.portrait .store-pack .pack-art{grid-column:1;grid-row:2/5;width:100%;height:76px;align-self:center}
+.portrait .store-pack :is(h2,.pack-amount,button){grid-column:2;margin:0}
+.portrait .store-pack p,.portrait .store-footer-note{display:none}
+.portrait .store-pack .pack-amount{display:flex;align-items:baseline;gap:5px}
+.portrait #meta-screen[data-view=shop] .meta-content{padding-right:2px}
+.portrait #multiplayer .online-options{align-content:start;margin:14px 0;gap:12px}
+.portrait #multiplayer .online-card{padding:14px;gap:6px}
+.portrait #multiplayer .online-card p{max-width:none}
+.portrait #multiplayer .online-number{font-size:15px}
+.portrait #multiplayer .online-card h3{font-size:23px}
+.portrait #multiplayer .room-code-line{flex-wrap:wrap}
+.portrait #multiplayer #invite-code{font-size:24px}
+.portrait #multiplayer .code-help,.portrait #multiplayer .lineup-character strong{font-size:16px}
+.portrait #multiplayer .join-row :is(input,button),.portrait #multiplayer #copy-invite{min-height:42px}
+.portrait #meta-screen .quick-player{display:grid;grid-template-columns:90px 1fr;align-items:center;padding:5px 10px;min-height:94px}
+.portrait .quick-player .stake-athlete{height:84px;width:100%;position:static}
+.portrait .quick-player .stake-athlete img{width:100%;height:100%;object-fit:contain}
+.portrait #meta-screen .meta-footer :is(.meta-notice,.meta-save):empty{display:none}
+.portrait .phone-forfeit{color:#ffa79e}
+.phone-only{display:none}
+.portrait .phone-only{display:block}
+.portrait #meta-screen .training-mode{padding-right:42px!important}
+.portrait #meta-screen .control-mode-card>.phone-only{display:block}
+.portrait #meta-screen .bracket-match{grid-template-rows:repeat(4,auto)}
+.portrait #meta-screen .bracket-caption{height:auto}
+.portrait .lineup-role,.portrait .lineup-role span{font-size:14px}
+.portrait .lineup-character strong{font-size:18px}
+.portrait .match-finale .result-navigation{flex-wrap:wrap}
+.portrait #meta-screen [data-meta=quick-forfeit],.portrait #meta-screen [data-meta=review-forfeit]{color:#ffaaa6}
+.portrait #panel-match .duration-option small{display:none}
+
+/* Home champion and play dock share a stage so the art remains visible behind the actions. */
+#meta-screen[data-view=home] .meta-content{overflow:hidden;position:static}
+#meta-screen[data-view=home] .hero-home{position:relative;width:100%;height:100%;min-height:0;isolation:isolate}
+#meta-screen[data-view=home] .hero-select{position:absolute;inset:-5% 4% -8% 34%;display:block;width:auto;height:auto;max-width:none;border:0;background:transparent;clip-path:none;box-shadow:none;padding:0}
+.hero-select :is(img,svg){width:100%;height:100%;object-fit:contain;display:block}
+.hero-select span{position:absolute;right:6%;top:47%;padding:6px 12px;background:#102537e8;color:#fff;border-left:3px solid var(--lime);font-size:clamp(16px,2cqw,28px)}
+.home-play{position:absolute;left:2%;bottom:8%;width:42%;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#meta-screen .home-play button{margin:0;width:100%;min-width:0;max-width:none;min-height:50px;font-size:clamp(18px,2.5cqw,42px);padding:9px;white-space:normal}
+.home-play button:nth-child(-n+2){grid-column:1/-1}
+#meta-screen[data-view=home] .meta-footer{position:absolute;right:2%;bottom:2%;width:auto;padding:0;border:none;z-index:2}
+#meta-screen[data-view=home] .meta-footer [data-meta=preferences]{min-width:48px;min-height:48px;width:48px;padding:0;font:28px/1 sans-serif}
+#meta-screen[data-view=home] .meta-footer .meta-notice:empty{display:none}
+.preferences-list{display:grid;align-content:center;min-height:100%;max-width:600px;margin:auto;gap:8px}
+#meta-screen .preferences-list button{min-height:46px;width:100%;margin:0}
+#meta-screen[data-view=quick-menu] .mode-pair{grid-template-columns:repeat(3,minmax(0,1fr))}
+body.portrait #meta-screen[data-view=quick-menu] .mode-pair{grid-template-columns:1fr;align-content:start}
+body.portrait #meta-screen[data-view=home]{grid-template-rows:auto minmax(0,1fr) 46px}
+body.portrait #meta-screen[data-view=home] .hero-select{inset:-4% -4% 1%;width:108%;padding:0}
+body.portrait .hero-select span{right:5%;top:47%}
+body.portrait .home-play{width:100%;left:0;bottom:0;gap:8px}
+@layer phoneType{body.portrait #meta-screen .home-play button{min-height:50px;font-size:20px!important}body.portrait #meta-screen .home-play button:nth-child(-n+2){min-height:58px;font-size:24px!important}body.portrait #meta-screen .meta-footer [data-meta=preferences]{font-size:28px!important}}
+body.portrait .collection-showcase{min-height:clamp(230px,33dvh,345px)}
+body #meta-screen[data-view=home] .meta-content,body.portrait #intro #meta-screen[data-view=home] .meta-content{overflow:hidden}
+#meta-screen[data-view=home] .meta-footer:has(.meta-notice:empty){display:none}
+body.portrait #intro #meta-screen[data-view=home]{grid-template-rows:auto minmax(0,1fr)}
+#meta-screen .meta-wallet [data-meta=preferences]{min-width:42px;min-height:42px;padding:6px;font:22px/1 sans-serif}
+
+/* Center splash actions against the full game frame, independently of the artwork. */
+#meta-screen[data-view=splash] .splash-content{box-sizing:border-box;padding-bottom:clamp(70px,8cqh,80px)}
+#meta-screen[data-view=splash] .splash-content>button{
+ position:absolute;left:50%;transform:translateX(-50%);margin:0;
+ bottom:max(11%,calc(env(safe-area-inset-bottom) + 64px));
+ width:min(72%,420px);min-width:0;min-height:clamp(52px,8cqh,80px);
+ padding:10px 20px;font-size:clamp(24px,3cqw,38px);text-align:center
+}
+#meta-screen[data-view=splash] .splash-content>.splash-developer{
+ position:absolute;inset:auto 0 max(8px,env(safe-area-inset-bottom)) 0;
+ margin:0;align-items:center;text-align:center;gap:2px;font-size:clamp(14px,1.2cqw,18px);line-height:1.1
+}
+@layer phoneType{body.portrait #meta-screen[data-view=splash] .splash-content>button{font-size:26px!important}}
+
+/* Keep the selected player on stage. Only the lower two-row rail moves. */
+#meta-screen[data-view=collection] .meta-content{min-height:0;overflow:hidden}
+#meta-screen[data-view=collection] .collection-stage{
+ height:100%;min-height:0;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+ grid-template-rows:minmax(0,7fr) minmax(0,3fr);gap:6px;align-content:stretch
+}
+#meta-screen .collection-showcase{grid-area:1/1;min-height:0}
+#meta-screen .collection-info{grid-area:1/2;padding:0 6px;min-width:0}
+#meta-screen .collection-roster{grid-area:2/1/3/-1;border:0;padding:0;overflow:hidden}
+#meta-screen .collection-grid{
+ display:grid;grid-template-columns:none;grid-template-rows:repeat(2,minmax(0,1fr));
+ grid-auto-flow:column;grid-auto-columns:calc((100% - 12px)/3);gap:4px 6px;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x;
+ scroll-snap-type:x proximity;scrollbar-width:none
+}
+.collection-tile{scroll-snap-align:start}
+#meta-screen .collection-legend{display:flex;align-items:center;justify-content:space-between;padding:0 0 2px;font-size:16px}
+#meta-screen .collection-legend>div{display:flex;gap:6px}
+#meta-screen .collection-legend button{min-width:42px;height:32px;min-height:0;margin:0;padding:0;font:700 24px/1 sans-serif}
+#meta-screen .collection-tile{min-height:0;display:grid;grid-template-columns:36% 1fr;grid-template-rows:1fr 1fr;align-items:center;gap:0 4px}
+#meta-screen .collection-tile .collection-thumb{grid-row:1/3;width:100%;height:100%;position:static}
+#meta-screen .collection-tile-name,#meta-screen .collection-price{position:static;background:transparent;min-height:0;height:auto;padding:0;justify-content:start;font-size:15px}
+#meta-screen .collection-tile.focused .collection-tile-name{color:white}
+#meta-screen .collection-ownership,.collection-watermark,.collection-access strong{display:none}
+#meta-screen .collection-full-art.skin-preview{inset:0 0 76px}
+#meta-screen .skin-selector{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:5px;font-size:16px}
+#meta-screen .skin-selector .variant-arrow{position:static;width:42px;min-width:38px;height:42px;background:#163849;border:1px solid #7195a7;font:700 26px/1 sans-serif}
+#meta-screen .collection-edition.skin-edition{position:absolute;inset:auto 0 45px;text-align:center;font-size:16px;line-height:1.05}
+body.portrait #intro #meta-screen[data-view=collection] .meta-content{overflow:hidden}
+@layer phoneType{body.portrait #meta-screen .skin-selector .variant-arrow,body.portrait #meta-screen .collection-legend button{font-size:24px!important}}
+#meta-screen[data-view=home] .meta-header h1{width:clamp(175px,27cqw,420px)}
+#meta-screen[data-view=home] .meta-wallet .currency-icon{width:30px;height:30px}
+body.portrait #intro #meta-screen[data-view=home] .meta-header{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px}
+body.portrait #intro #meta-screen[data-view=home] .meta-header h1{width:100%;max-width:220px}
+body.portrait #meta-screen[data-view=home] .meta-wallet>*{min-height:44px;padding:5px;gap:3px}
+@layer phoneType{body.portrait #meta-screen[data-view=home] .meta-wallet :is(button,span){font-size:20px!important}}
+body .game-header #combo{text-align:right;text-shadow:0 2px 3px #071322,1px 0 #071322,-1px 0 #071322;pointer-events:none}
+body .game-header #rally{font-size:clamp(44px,5cqw,70px);line-height:.92}
+body.portrait .game-header{background:linear-gradient(#07152688,transparent)}
+body.portrait .game-header #combo{top:53px;left:auto;right:3%;width:94px}
+body.portrait .game-header #rally{font-size:54px}
+body.portrait .game-header #rally-heat{height:7px;background:#07152670}
+body.portrait .game-header .scoreboard{width:69%;text-shadow:0 1px 3px #031522}
+body.portrait .game-header .team{font-size:17px;max-width:none}
+body.portrait .game-header .score-cell{font-size:24px;background:transparent}
+@layer phoneType{body.portrait .game-header #combo-label{font-size:19px!important}}
+#meta-screen[data-view=collection] .collection-grid{grid-template-columns:none}
+
+/* Portrait type and touch targets share the reading scale used by the rules. */
+@layer phoneType{
+ body.portrait #intro #meta-screen .home-play>button{min-height:60px;font-size:23px!important}
+ body.portrait #intro #meta-screen .home-play>button:nth-of-type(-n+2){min-height:66px;font-size:26px!important;grid-column:1/-1}
+ body.portrait #intro #meta-screen[data-view=home] .meta-wallet :is(span,button){font-size:25px!important}
+ body.portrait #intro #meta-screen :is(.control-mode-card,.preferences-list,.challenge-brief) :is(p,li,span,button,h3),body.portrait .menu-card :is(label,p,small,select,output,button){font-size:18px!important;line-height:1.25!important}
+ body.portrait #intro #meta-screen .home-challenges button{min-height:78px;margin:0;padding:6px 8px;display:grid;grid-template-columns:38px 1fr;align-content:center;text-align:left;min-width:0;gap:1px 5px}
+ body.portrait #intro #meta-screen .home-challenges strong{font-size:22px!important;line-height:1.05}
+ body.portrait #intro #meta-screen .home-challenges small{font-size:17px!important}
+}
+#meta-screen .home-challenges{grid-column:1/-1;min-width:0;padding:0 0 4px}
+.home-challenges h2{margin:0 0 5px;text-shadow:0 2px 3px #081825;font-size:22px}
+.home-challenges h2 span{color:var(--lime)}
+.home-challenges>div{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,56%);overflow-x:auto;gap:7px;scroll-snap-type:x mandatory;touch-action:pan-x;scrollbar-width:none}
+.home-challenges button{scroll-snap-align:start;background:#102b3be8}
+.home-challenges :is(svg,i){grid-row:span 2;width:38px;height:38px;color:var(--lime);font:36px/1 sans-serif}
+.challenge-brief{text-align:center;margin:auto;max-width:34ch;padding:16px}
+.challenge-brief>svg,.challenge-brief>i{display:block;width:88px;height:88px;margin:12px auto;font:80px/1 sans-serif;color:var(--lime)}
+body.portrait #intro #meta-screen[data-view=home] .meta-header{grid-template-columns:minmax(0,1fr) auto}
+body.portrait #meta-screen[data-view=home] .meta-wallet .currency-icon{width:34px;height:34px}
+body.portrait #meta-screen[data-view=home] .hero-select{bottom:20%}
+body.portrait #intro #meta-screen[data-view=collection] :is(.collection-art-backplate,.collection-info h3,.meta-header p){display:none}
+body.portrait #meta-screen .collection-stage :is(.collection-info,.collection-showcase,.collection-access){background:transparent;border:0;box-shadow:none}
+body.portrait #intro #meta-screen[data-view=controls] .meta-content,body.portrait .menu-card{overflow-y:auto;overscroll-behavior:contain}
+body.portrait #meta-screen .control-mode-grid{align-content:start}
+body.portrait #meta-screen .preferences-list button{min-height:56px}
+body.portrait #meta-screen[data-view=training-config] :is(.training-tuning,.lineup-format),body.portrait #meta-screen[data-view=training-match] .versus-lineup{display:none}
+body.portrait .lineup-art img,body.portrait .match-squad article>div img{width:100%;height:100%;object-fit:contain}
+body.portrait .game-header .scoreboard{height:100px;width:69%;grid-template-rows:16px 40px 40px;grid-template-columns:minmax(0,1fr) 15% 21%}
+body.portrait .game-header .scoreboard .team,body.portrait .game-header .scoreboard .team span{font-size:clamp(19px,5.2vw,24px);line-height:1}
+body.portrait .game-header .scoreboard .score-cell{font-size:30px}
+body.portrait .game-header .scoreboard .score-cell.current{font-size:38px}
+body.portrait #room-slots[data-step="1"] .lineup-format,body.portrait #room-slots[data-step="2"] .versus-lineup,body.portrait #room-lobby:has(#room-slots[data-step="1"])~.room-footer :is(#start-online,#ready-online){display:none}
+body.portrait #multiplayer .room-step{width:100%;min-height:48px;margin:0 0 10px}
+body.portrait #intro #meta-screen .home-challenges button{grid-column:auto}
+body.portrait #intro #meta-screen :is(.lineup-art,.meta-athlete){height:84px}
+body.portrait #meta-screen[data-view=training-match] .lineup-format{display:grid;gap:16px}
+@layer phoneType{
+ body.portrait #meta-screen[data-view=training-match] :is(select,label,output),body.portrait #multiplayer .room-step{font-size:18px!important}
+ body.portrait #meta-screen[data-view=training-match] select{min-height:46px}
+}
+
+/* Challenge text follows the same condensed display face as the play buttons.
+   Keep icon glyphs outside the text rules so their shapes survive font fallback. */
+@layer phoneType{
+ body.portrait #meta-screen :is(.challenge-board,.challenge-brief,.home-challenges),
+ body.portrait #meta-screen :is(.challenge-board,.challenge-brief,.home-challenges) :is(h2,strong,small,p,b,button,span){
+  font-family:'Barlow Condensed','Arial Narrow',sans-serif!important
+ }
+ body.portrait #meta-screen :is(.home-challenges h2,.challenge-copy strong,.challenge-brief h2){
+  font-size:26px!important;font-weight:800;line-height:1.08!important
+ }
+ body.portrait #meta-screen .home-challenges strong{font-weight:800;font-style:italic}
+ body.portrait #meta-screen :is(.lineup-role,.lineup-role span,.lineup-control b,.collection-tile-name,.bracket-id,.match-position strong,.match-position span,.challenge-count,#challenge-reset),
+ body.portrait .point-card .result-teams,body.portrait #multiplayer :is(.lineup-role,.code-help,.lineup-character strong){font-size:17px!important;line-height:1.15!important}
+ body.portrait #intro #meta-screen :is(.control-mode-card,.preferences-list,.challenge-brief) :is(p,li,button,h3),
+ body.portrait #meta-screen .meta-footer>button{font-size:20px!important}
+}
+body.portrait #meta-screen .challenge-tabs{flex-wrap:wrap}
+body.portrait #challenge-reset{flex-basis:100%;text-align:right}
+body.portrait #meta-screen .challenge-copy{min-width:0}
+body.portrait #meta-screen .challenge-copy strong{overflow-wrap:break-word}
+body.portrait #meta-screen .home-challenges strong{white-space:normal}
+@layer phoneType{
+ body.portrait #intro #meta-screen :is(.collection-price,.player-price,.skin-price,.entry-price,.stake-tier strong,.challenge-reward,.pack-amount strong){font-size:24px!important;line-height:1.05!important}
+ body.portrait #intro #meta-screen .collection-stats .meta-stat{font-size:20px!important;display:grid;grid-template-columns:1fr;gap:3px;margin:6px 0}
+ body.portrait #intro #meta-screen .collection-info h2{font-size:32px!important}
+ body.portrait .game-header .score-head{font-size:17px!important}
+}
+body.portrait #meta-screen .collection-info{overflow-y:auto}
+body.portrait .game-header .scoreboard{height:112px;grid-template-rows:20px 44px 44px}
+body.portrait .game-header .scoreboard .score-cell.current{font-size:44px}
+body.portrait .game-header #rally{font-size:62px}
+
+/* Keep match format and sound controls in the match menu. */
+body.portrait .game-header :is(#audio-toggle,#scoremode,#club-hud),body.portrait .game-header #rally-heat{display:none}
+body.portrait .game-header .quick-actions{top:4px;right:2%}
+body.portrait .game-header #pause{width:44px;height:44px}
+body.portrait .game-header #combo{top:52px;right:2%;display:flex;flex-direction:column;align-items:flex-end;gap:0;width:auto}
+body.portrait #point-result:not(.match-finale) .result-teams{display:none}
+body.portrait:has(#point-result:not(.hidden)) .game-header{visibility:hidden}
+body.portrait #point-result:not(.match-finale) .point-card{padding-block:18px}
+@layer phoneType {
+  body.portrait #intro #meta-screen .wager-amount output,
+  body.portrait #intro #meta-screen .wager-prize output {font-size:inherit!important;line-height:1!important}
+}

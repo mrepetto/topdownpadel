@@ -1,0 +1,22 @@
+[
+  {
+    "asset": "store-shop-icon.webp",
+    "prompt": "Simplify this exact shop silhouette drastically into a premium mobile game SHOP ICON readable at 70 pixels. Keep its overall storefront shape and awning, but remove all plants, rackets, balls, window displays, tiny ornaments, thin trim and extra details. Use ONLY metallic GOLD and warm amber shadows, no blue teal or other colors. Just a bold golden awning, simple shop body with one large doorway and a small chunky shopping bag emblem. Thick rounded beveled forms, 3D polished sporty game rendering. Extremely simple, iconic, clear silhouette, few large shapes. No container, border, text, scene or floor. Fully transparent background. Center with ample transparent margins.",
+    "method": "built-in image generation edit"
+  },
+  {
+    "asset": "store-coins-0.webp",
+    "prompt": "Edit this coin stack illustration. Change ALL blue, navy and teal surfaces on EVERY coin to solid warm metallic GOLD. All coins must be entirely gold, including their faces, grooves and sides; tennis ball seams embossed in gold. Preserve exactly the composition, stack amounts, shapes, golden reflections and transparent background. Only GOLD yellow highlights and amber shadow colors, no blue or teal anywhere. No bags or text.",
+    "method": "built-in image generation edit"
+  },
+  {
+    "asset": "store-coins-1.webp",
+    "prompt": "Edit this coin stack illustration. Change ALL blue, navy and teal surfaces on EVERY coin to solid warm metallic GOLD. All coins must be entirely gold, including their faces, grooves and sides; tennis ball seams embossed in gold. Preserve exactly the composition, stack amounts, shapes, golden reflections and transparent background. Only GOLD yellow highlights and amber shadow colors, no blue or teal anywhere. No bags or text.",
+    "method": "built-in image generation edit"
+  },
+  {
+    "asset": "store-proshop-icon.webp",
+    "prompt": "Redesign the provided shop icon into a SIMPLE sporty PADEL PRO SHOP game icon, for Top Down Padel. Foreground: one large recognizable dark navy padel racket with only a few bold holes, warm gold edge and grip, angled diagonally; one bright golden yellow tennis ball with simple curved white seam beside it. Background: a very minimal small flat-front shop, just a low navy rectangle and straight gold awning, partially hidden behind racket and ball. Racket and ball are the focal point. Remove ornate roof, shopping handbag symbol, pedestal, bevel-heavy shiny gold building and any decorative trim. Style: clean illustrated mobile sports game, matte navy and warm gold with restrained cel shading, broad readable shapes, crisp silhouette. Not a fantasy game treasure icon, not photorealistic, not toy-like glossy 3D. Very limited palette navy and gold, no plants, signage, text, extra objects, frame or container. Compact square composition, transparent background, generous empty margin, legible at 75 pixels.",
+    "method": "built-in image generation edit"
+  }
+]

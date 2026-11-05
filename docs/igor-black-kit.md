@@ -1,0 +1,5 @@
+# Igor black kit revision
+
+Built-in image-generation edit using Igor's existing portrait. Assets: `web/athlete-v3-igor.webp` and `web/portrait-thumb-igor.webp`. Updated shared head crop and on-court shirt; preserved cap colour, age, beard and gameplay.
+
+Prompt: Edit this existing full-body sports game character Igor. Keep recognizable face, 60-year-old age, salt-and-pepper circle beard and gray temples, backwards cap. Change shirt to BLACK technical sports jersey with restrained charcoal panel seams and a small muted teal trim, no pink on shirt. Replace playful shrug/crossed legs with grounded confident competitive stance: feet shoulder-width apart, weight evenly balanced, shoulders squared, one hand firmly holding padel racket down at his side, other hand on hip. Calm focused expression. Keep other outfit elements and same polished 2D painted game illustration rendering. Full-body 3/4 side facing right, all shoes and racket inside frame with margins, tall 2:3 canvas. Genuinely transparent background, no text, no logos, no backdrop.

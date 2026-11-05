@@ -1,0 +1,13 @@
+node_modules/
+.openai/preview.sqlite*
+
+builds/
+
+# Generated output and local credentials
+dist/
+.DS_Store
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.keystore

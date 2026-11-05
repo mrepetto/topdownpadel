@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Top Down Padel</string>
+    <string name="title_activity_main">Top Down Padel</string>
+    <string name="package_name">com.topdownpadel.game</string>
+    <string name="custom_url_scheme">com.topdownpadel.game</string>
+</resources>
