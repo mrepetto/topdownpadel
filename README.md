@@ -16,7 +16,7 @@ npm run open:ios
 
 Use the existing App project in Xcode, automatic signing with Monster League SL,
 and your connected iPhone as destination. Bundle ID: `com.topdownpadel.game`.
-Native compilation and device testing are still pending.
+Martín confirmed a successful Xcode build, installation and launch on his iPhone on 5 November 2026. Subsequent builds still require device validation.
 
 ## Get subsequent updates
 

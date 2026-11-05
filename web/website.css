@@ -6,3 +6,96 @@
 @media(max-width:600px){.wrap{width:calc(100% - 40px)}.header-inner{height:76px;gap:10px}.logo{width:150px}.site-header .nav-download{font-size:11px;line-height:1.2;white-space:nowrap;padding:9px 8px}.language{font-size:13px;width:30px;flex:0 0 30px;padding:8px 0 8px 8px}.hero{min-height:0;background-size:auto 515px;background-position:68% top;background-repeat:no-repeat;padding-top:345px}.hero:before{background:linear-gradient(0deg,#06172e 0%,#06172e 42%,#06172e00 82%)}.hero-inner{min-height:0;padding-block:0 50px;display:block}.hero-copy{width:100%;max-width:none}.hero .eyebrow{font-size:9px;letter-spacing:1.3px;margin-bottom:15px;gap:8px}.hero h1{font-size:clamp(52px,13.3vw,76px);letter-spacing:-1px}.hero-description{font-size:18px;line-height:1.55;max-width:none;margin:20px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.primary-cta{font-size:19px;min-height:54px;padding:15px 20px}.watch-link{font-size:11px}.hero-stores{margin-top:27px}.store-buttons{gap:10px}.store-button{min-width:0;flex:1;max-width:205px;padding:11px 10px;gap:8px;min-height:66px}.store-button img{width:24px;height:27px}.store-button small{font-size:9px;letter-spacing:.1px;white-space:nowrap}.store-button strong{font-size:18px;white-space:nowrap}.build-note{font-size:11px;margin-top:14px}.ticker{padding:10px 0;gap:20px}.ticker span{font-size:19px;letter-spacing:.5px}.ticker span:nth-of-type(2),.ticker span:nth-of-type(3),.ticker b:nth-of-type(2),.ticker b:nth-of-type(3){display:none}.ticker b{font-size:18px}.gameplay-section{display:flex;flex-direction:column;gap:40px;padding-block:65px}.gameplay-section h2{font-size:58px}.eyebrow{font-size:10px;letter-spacing:1.6px;margin-bottom:18px}.lead{font-size:18px;line-height:1.65}.gameplay-copy .lead{margin:22px 0}.shot-list{margin-top:25px}.shot-list article{gap:17px;padding:23px 0}.shot-list h3{font-size:28px}.shot-list p{font-size:17px}.gameplay-media .phone{width:260px}.media-tag{font-size:11px}.gameplay-media>p{font-size:11px;max-width:280px}.campaign-inner{display:flex;flex-direction:column-reverse;gap:0;padding-block:60px 25px}.campaign-copy h2{font-size:55px}.campaign-copy .lead{font-size:18px}.campaign-steps li{font-size:17px;align-items:flex-start;gap:13px}.campaign-steps b{margin-top:2px}.campaign-facts{gap:48px;margin-top:30px}.campaign-facts strong{font-size:65px}.campaign-facts span{font-size:9px}.mode-note{font-size:13px}.campaign-art{width:100%;max-width:390px;height:440px;margin-top:15px}.campaign-rival{height:420px;bottom:10px;max-width:75%}.rival-back{height:380px;left:0;bottom:20px}.rival-front{right:0}.campaign-stamp{bottom:8px;font-size:17px;left:6%;padding:11px 15px}.characters-section{padding-block:65px 40px}.section-heading{flex-direction:column;align-items:flex-start;gap:22px}.section-heading h2{font-size:55px}.section-heading .lead{font-size:18px;max-width:none;margin:0}.roster-toolbar{margin:27px 0 15px}.roster-toolbar p{font-size:9px;letter-spacing:.8px;max-width:210px}.arrow-button{width:38px;height:38px;font-size:22px}.roster-toolbar>div{gap:7px}.roster{gap:15px}.player-card{flex-basis:265px;min-width:265px;padding:15px}.player-art{height:350px}.player-role{font-size:10px}.variant-button{height:36px;font-size:10px}.variant-name{font-size:13px}.play-modes{display:flex;flex-direction:column;gap:24px;padding-block:10px 60px}.play-modes>article{padding:32px 25px;border-radius:18px}.play-modes h2{font-size:51px}.play-modes article>p:not(.eyebrow){font-size:17px}.play-modes .eyebrow{font-size:10px}.team-line{gap:6px;margin-block:25px;flex-wrap:nowrap}.team-line img{width:53px;height:66px}.team-line b{font-size:27px;padding:0 5px}.text-cta{font-size:13px}.rewards-art{width:170px;height:145px;margin:-8px -5px 10px 5px}.screens-section{padding-block:60px 65px}.screens-section h2{font-size:50px}.screenshots{justify-content:flex-start;gap:25px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:15px 20px 28px;margin:30px -10px 0;scrollbar-width:thin;scrollbar-color:#426486 transparent}.screenshots .phone,.screenshots .phone:nth-child(2),.screenshots .phone:nth-child(3){width:225px;transform:none;scroll-snap-align:center}.about-section{grid-template-columns:1fr;gap:33px;padding-block:65px}.about-section h2{font-size:52px}.about-copy h3{font-size:42px}.about-copy p{font-size:18px}.download-section{padding-block:65px 50px}.download-section h2{font-size:59px}.download-section>div>p:not(.eyebrow){font-size:17px;margin:22px 0 25px}.future-platforms{gap:16px;padding-top:25px;margin-bottom:25px}.future-platforms button{grid-template-columns:1fr;justify-items:center;text-align:center;gap:8px;flex:1;min-width:0}.future-platforms img{width:30px;height:30px;grid-row:auto}.future-platforms strong{font-size:16px}.future-platforms span{font-size:10px}.test-link{font-size:14px}.site-footer{gap:22px;padding-block:28px 35px;font-size:12px}.footer-logo{width:140px}.site-footer p{max-width:170px;font-size:11px}.site-footer nav{justify-content:space-between;font-size:12px;gap:14px}.site-footer small{font-size:10px}.platform-message{font-size:15px;bottom:20px}}
 @media(max-width:360px){.wrap{width:calc(100% - 30px)}.logo{width:123px}.header-inner{gap:8px}.site-header .nav-download{font-size:10px;padding-inline:6px}.hero h1{font-size:47px}.store-button{gap:6px;padding-inline:7px}.store-button small{font-size:8px}.store-button strong{font-size:17px}.store-button img{width:21px}.hero-actions{gap:20px}.primary-cta{font-size:18px}.team-line img{width:43px;height:55px}.team-line{gap:4px}.team-line b{padding:0 4px}.campaign-copy h2{font-size:49px}.section-heading h2{font-size:49px}.download-section h2{font-size:53px}.site-footer{gap:15px}.footer-logo{width:120px}.site-footer p{max-width:155px}.site-footer nav{gap:10px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Website-only portrait framing: closer hero, with headroom above Martín. */
+@media(min-width:601px){.hero{background-size:auto 135%;background-position:calc(100% + 8vw) 24px}}
+@media(min-width:1600px){.hero{background-size:auto 145%;background-position:calc(100% + 7vw) 28px}}
+@media(max-width:600px){.hero{background-size:auto 680px;background-position:76% 20px;padding-top:390px}}
+
+/* Responsive website rhythm. Keep the desktop composition; give touch layouts
+   their own artwork area, readable supporting copy and generous controls. */
+main,.gameplay-copy,.campaign-copy,.section-heading>div,.about-copy{min-width:0}
+.gameplay-media:before{width:min(520px,100vw)}
+@media(max-width:1000px){
+ .hero{min-height:0;padding-top:440px;background-size:auto 780px;background-position:85% 18px}
+ .hero:before{background:linear-gradient(to bottom,transparent 240px,#06172e99 380px,#06172e 530px)}
+ .hero-inner{min-height:0;display:block;padding-block:0 60px}
+ .hero-copy{width:100%;max-width:700px;margin-inline:auto}
+ .hero h1{font-size:clamp(52px,8vw,76px)}
+ .hero-description{max-width:620px}
+ .hero-stores{max-width:470px}
+ .language{min-width:44px;min-height:44px}
+ .nav-download{min-height:44px;display:flex;align-items:center}
+}
+@media(max-width:800px){
+ .wrap{width:calc(100% - 40px)}
+ .gameplay-section,.about-section{grid-template-columns:1fr;gap:36px;padding-block:64px}
+ .gameplay-section{display:flex;flex-direction:column;align-items:stretch}
+ .gameplay-copy .lead{max-width:none}
+ .gameplay-media .phone{width:min(280px,80vw)}
+ .campaign-inner{display:flex;flex-direction:column-reverse;gap:24px;padding-block:64px 30px}
+ .campaign-art{width:100%;max-width:460px;height:450px;margin-inline:auto}
+ .campaign-rival{height:420px;max-width:75%;bottom:12px}
+ .rival-back{height:390px;left:0;bottom:20px}.rival-front{right:0}
+ .campaign-stamp{bottom:8px;left:6%;font-size:18px}
+ .campaign-copy .lead,.campaign-steps li{font-size:18px}
+ .campaign-facts{gap:32px;flex-wrap:wrap}.campaign-facts span{font-size:12px;letter-spacing:.6px}
+ .mode-note{font-size:15px}
+ .section-heading{flex-direction:column;align-items:flex-start;gap:22px}
+ .section-heading .lead{max-width:none;font-size:18px}
+ .play-modes{grid-template-columns:1fr;gap:24px}
+ .play-modes>article{padding:30px}
+ .play-modes h2,.campaign-copy h2,.section-heading h2,.about-section h2,.gameplay-section h2,.screens-section h2,.download-section h2{font-size:clamp(44px,7.5vw,60px);overflow-wrap:normal}
+ .play-modes article>p:not(.eyebrow){font-size:18px}
+ .team-line{gap:8px;flex-wrap:nowrap}.team-line img{width:clamp(40px,10vw,65px);height:auto;aspect-ratio:65/75;min-width:0}
+ .team-line b{padding:0 4px}
+ .rewards-art{float:none;width:220px;height:180px;margin:0 auto 24px}
+ .eyebrow,.hero .eyebrow,.play-modes .eyebrow{font-size:12px;letter-spacing:1px;line-height:1.5}
+ .roster-toolbar{gap:16px}.roster-toolbar p{font-size:12px;letter-spacing:.4px;max-width:230px}
+ .roster-toolbar>div{flex-shrink:0}.arrow-button{width:44px;height:44px}
+ .player-card{flex-basis:280px;min-width:260px;padding:18px}
+ .player-art{height:350px}.player-role,.player-index{font-size:12px}.variant-name{font-size:16px;min-height:24px}
+ .variant-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .variant-button{height:44px;font-size:13px}
+ .screenshots{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:24px;margin:30px 0 0;padding:16px 8px 30px}
+ .screenshots .phone,.screenshots .phone:nth-child(2),.screenshots .phone:nth-child(3){width:230px;transform:none;scroll-snap-align:center}
+ .media-tag{font-size:12px}.gameplay-media>p{font-size:14px}
+ .text-cta,.test-link{font-size:16px;line-height:1.5;min-height:44px;display:inline-flex;align-items:center}
+ .site-footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:15px}
+ .site-footer p{margin:0;max-width:none;font-size:15px}.site-footer small{font-size:13px}
+ .site-footer nav{width:100%;margin:0;justify-content:flex-start;flex-wrap:wrap;gap:8px 24px;font-size:15px}
+ .site-footer nav a,.site-footer nav button{min-height:44px;display:inline-flex;align-items:center}
+}
+@media(max-width:600px){
+ .header-inner{height:auto;min-height:76px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;padding-block:14px}
+ .site-header nav{grid-column:1/-1;grid-row:2;margin:0;justify-content:stretch}
+ .site-header .nav-download{justify-content:center;width:100%;font-size:14px;padding:10px 14px}
+ .logo{width:min(200px,100%)}.language{grid-column:2;grid-row:1;font-size:15px;width:44px;padding:0;border-left:1px solid var(--line)}
+ .hero{padding-top:350px;background-size:auto 620px;background-position:85% 12px}
+ .hero:before{background:linear-gradient(to bottom,transparent 210px,#06172e99 310px,#06172e 430px)}
+ .hero-inner{padding-bottom:44px}.hero .eyebrow{margin-bottom:16px}
+ .hero h1{font-size:clamp(46px,12.7vw,70px)}
+ .hero-actions{display:grid;grid-template-columns:1fr;gap:16px}
+ .primary-cta{font-size:22px;min-height:56px;padding:14px 20px}
+ .watch-link{font-size:14px;min-height:44px;display:flex;align-items:center;justify-content:center;width:max-content;justify-self:center}
+ .store-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .store-button{width:100%;max-width:none;min-width:0;padding:12px 8px;gap:8px;min-height:72px;justify-content:center}
+ .store-button small{font-size:10px;white-space:normal;line-height:1.35;letter-spacing:.2px}
+ .store-button strong{font-size:18px}.store-button img{width:24px;flex-shrink:0}
+ .build-note{font-size:13px;line-height:1.5}
+ .play-modes>article{padding:26px 20px}
+ .campaign-facts{gap:22px}.campaign-facts strong{font-size:60px}
+ .future-platforms{gap:12px}.future-platforms span{font-size:12px}.future-platforms strong{font-size:16px}
+}
+@media(max-width:360px){
+ .wrap{width:calc(100% - 32px)}
+ .hero{padding-top:310px;background-size:auto 560px;background-position:85% 12px}
+ .hero:before{background:linear-gradient(to bottom,transparent 180px,#06172e99 270px,#06172e 390px)}
+ .hero h1{font-size:46px}
+ .store-buttons{grid-template-columns:1fr}.store-button{justify-content:center;min-height:70px}.store-button strong{font-size:22px}.store-button small{font-size:11px}
+ .play-modes h2,.campaign-copy h2,.section-heading h2,.about-section h2,.gameplay-section h2,.screens-section h2,.download-section h2{font-size:44px}
+ .roster-toolbar{align-items:flex-end}.roster-toolbar p{max-width:150px}
+ .team-line{gap:4px}.team-line img{width:40px}.team-line b{font-size:24px;padding:0 2px}
+}
+@media(max-width:600px){.primary-cta{white-space:nowrap}}
+@media(max-width:360px){.primary-cta{font-size:20px;gap:12px;padding-inline:14px}}
