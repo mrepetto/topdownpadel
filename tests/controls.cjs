@@ -7,3 +7,18 @@ vm.createContext(box);vm.runInContext(fs.readFileSync('web/controls.js','utf8'),
 box.captureMouse();assert.equal(captures,1);doc.pointerLockElement=box.canvas;events.pointerlockchange();doc.pointerLockElement=null;events.pointerlockchange();assert.equal(pauses,1);
 box.state='play';pad={connected:true,axes:[.8,0,0,1],buttons:Array.from({length:16},()=>({pressed:false}))};pad.buttons[0].pressed=true;box.pollController(0);assert(box.joy.x>.7);assert.equal(box.controlAim.y,1);assert.deepEqual(hits[0],['charge','PadA',false]);pad.buttons[0].pressed=false;box.pollController(16);assert.deepEqual(hits[1],['release','PadA']);pad.buttons[1].pressed=true;box.pollController(32);assert.deepEqual(hits[2],['charge','PadB',true]);pad.buttons[1].pressed=false;pad.buttons[5].pressed=true;box.pollController(48);assert(box.keys.ShiftRight);pad=null;box.pollController(64);assert.equal(box.joy.x,0);assert.equal(box.keys.ShiftRight,false);assert.equal(box.controlAim,null);
 console.log('PASS mouse capture request/Escape release, gamepad move/aim/A/B/dash/disconnect');
+
+// Android touch-capable Chrome must never request desktop pointer lock.
+box.state='play';box.navigator.maxTouchPoints=5;
+const previousCaptures=captures,previousPauses=pauses;
+box.captureMouse();assert.equal(captures,previousCaptures);
+events.pointerdown({pointerType:'touch'});box.captureMouse();assert.equal(captures,previousCaptures);
+// A stale lock lost after switching to touch must not open the pause menu.
+doc.pointerLockElement=box.canvas;events.pointerlockchange();
+events.pointerdown({pointerType:'touch'});assert.equal(exits,1);
+doc.pointerLockElement=null;events.pointerlockchange();assert.equal(pauses,previousPauses);
+// An actual mouse on a hybrid device can still capture and Escape still pauses.
+events.pointerdown({pointerType:'mouse'});box.captureMouse();assert.equal(captures,previousCaptures+1);
+doc.pointerLockElement=box.canvas;events.pointerlockchange();
+doc.pointerLockElement=null;events.pointerlockchange();assert.equal(pauses,previousPauses+1);
+console.log('PASS Android touch capture suppression, touch lock release, hybrid mouse/Escape');

@@ -1,10 +1,17 @@
 'use strict';
 let padButtons=[],padConnected=false,padNavAt=0,hadPointerLock=false,requestedUnlock=false;
 const playControls=()=>!globalThis.Practice?.demonstrating&&['play','serve','point','fault','let'].includes(state)&&!network?.menu&&!document.querySelector('dialog[open]');
+// Touch browsers can expose Pointer Lock without a usable mouse. Never capture touch play.
+let lastPointerType=null;
+document.addEventListener('pointerdown',event=>{
+ lastPointerType=event.pointerType;
+ if(event.pointerType==='touch'&&document.pointerLockElement===canvas){requestedUnlock=true;document.exitPointerLock?.();}
+},true);
+const mouseCaptureAllowed=()=>lastPointerType==='mouse'||(lastPointerType!=='touch'&&!(globalThis.navigator?.maxTouchPoints>0)&&globalThis.matchMedia?.('(pointer: fine) and (hover: hover)')?.matches!==false);
 function deadzone(v){return Math.abs(v)<.18?0:Math.sign(v)*(Math.abs(v)-.18)/.82;}
-globalThis.captureMouse=()=>{if(!playControls()||padConnected||!canvas.requestPointerLock||document.pointerLockElement===canvas)return;requestedUnlock=false;try{const promise=canvas.requestPointerLock();promise?.catch(()=>message('CLICK COURT TO CAPTURE MOUSE'));}catch{message('CLICK COURT TO CAPTURE MOUSE');}};
+globalThis.captureMouse=()=>{if(!mouseCaptureAllowed()||!playControls()||padConnected||!canvas.requestPointerLock||document.pointerLockElement===canvas)return;requestedUnlock=false;try{const promise=canvas.requestPointerLock();promise?.catch(()=>message('CLICK COURT TO CAPTURE MOUSE'));}catch{message('CLICK COURT TO CAPTURE MOUSE');}};
 globalThis.syncPointerLock=()=>{if(document.pointerLockElement===canvas&&!playControls()){requestedUnlock=true;document.exitPointerLock?.();}};
-document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===canvas;if(locked){hadPointerLock=true;requestedUnlock=false;const p=players[localSlot()],r=canvas.getBoundingClientRect();if(!charge?.gesture){const v=viewPoint(p.x+Math.cos(p.angle)*130,p.y+Math.sin(p.angle)*130);mouse={x:r.left+ox+v.x*scale,y:r.top+oy+v.y*scale};}}else if(hadPointerLock){hadPointerLock=false;cancelShot();if(!requestedUnlock&&['play','serve','point','fault','let'].includes(state)&&!network?.menu)togglePause();requestedUnlock=false;}});
+document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===canvas;if(locked){hadPointerLock=true;requestedUnlock=false;const p=players[localSlot()],r=canvas.getBoundingClientRect();if(!charge?.gesture){const v=viewPoint(p.x+Math.cos(p.angle)*130,p.y+Math.sin(p.angle)*130);mouse={x:r.left+ox+v.x*scale,y:r.top+oy+v.y*scale};}}else if(hadPointerLock){hadPointerLock=false;cancelShot();if(!requestedUnlock&&mouseCaptureAllowed()&&['play','serve','point','fault','let'].includes(state)&&!network?.menu)togglePause();requestedUnlock=false;}});
 // Pointer capture needs a browser-approved click; resume is such a gesture.
 $('#resume').addEventListener('click',()=>globalThis.captureMouse());
 function menuBack(){if(globalThis.Practice?.demonstrating&&!Practice.isMenu()){Practice.menu();return;}if(globalThis.Practice?.isMenu()){Practice.back();return;}if(state==='intro'&&globalThis.progressionBack?.())return;const dialog=document.querySelector('dialog[open]');if(dialog){dialog.close();return;}if(state==='paused'||network?.menu){togglePause();return;}if(state==='intro'){if(menuStep==='difficulty')showMenuStep('characters');else if(menuStep==='characters'||menuStep==='gallery')showMenuStep('home');}}
