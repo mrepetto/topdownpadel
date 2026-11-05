@@ -99,3 +99,5 @@ main,.gameplay-copy,.campaign-copy,.section-heading>div,.about-copy{min-width:0}
 }
 @media(max-width:600px){.primary-cta{white-space:nowrap}}
 @media(max-width:360px){.primary-cta{font-size:20px;gap:12px;padding-inline:14px}}
+
+.primary-cta:disabled{cursor:default;border:0;box-shadow:none;max-width:100%;white-space:normal;text-align:center;line-height:1.2}.primary-cta:disabled:hover{filter:none;transform:none}
