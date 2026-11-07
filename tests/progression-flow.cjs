@@ -15,6 +15,7 @@ function boot(storage=new Map(),portrait=false,withHistory=false){
    addEventListener:(n,f)=>listeners[n]=f,querySelectorAll:()=>[],querySelector:el,
    append(...children){children.forEach(child=>this.appendChild(child));},appendChild(child){this.children.push(child);nodes.set('#'+child.id,child);},
    insertAdjacentHTML(_,html){this.innerHTML=html+this.innerHTML;},show(){this.open=true;},showModal(){this.open=true;},close(){this.open=false;this.listeners.close?.();}};
+  if(id==='.splash-video'){e.play=()=>Promise.resolve();e.pause=()=>{};}
   nodes.set(id,e);return e;
  }
  const box={assert,console,Math,Date,devicePixelRatio:1,performance,URLSearchParams,URL,location:{href:'https://example.test/'},

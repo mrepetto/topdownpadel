@@ -166,6 +166,7 @@
  }
  let storeEpoch=-1,storeSeason=false;
  function render(){
+  root.querySelector?.('.splash-video')?.pause();
   storeEpoch=globalThis.PadelStore?.period();storeSeason=Date.now()<globalThis.PadelStore?.HALLOWEEN_END;
   root.dataset.view=screen;
   syncControlTheme(selectedMode());
@@ -183,7 +184,15 @@
     }
    }
   }else if(screen==='splash'){
-   root.innerHTML=`<div class="splash-content"><img class="splash-logo" src="/menu-logo-single-trail.webp" alt="Top Down Padel"><h1 class="splash-headline">${tx('OWN THE<br><em>COURT!</em>','¡DOMINA<br><em>LA PISTA!</em>')}</h1><p class="splash-tagline">${tx('Easy to play, hard to master','Fácil de jugar, difícil de dominar')}</p>${btn('home',tx('CONTINUE','CONTINUAR'),true)}<div class="splash-developer"><span>${tx('Developed by','Desarrollado por')} <strong>KorposConsulting</strong></span><a href="https://korposconsulting.com" target="_blank" rel="noopener noreferrer">korposconsulting.com</a></div></div>`;
+   root.innerHTML=`<video class="splash-video" autoplay muted playsinline preload="auto" poster="/splash-intro-poster.webp" aria-label="Top Down Padel"><source src="/splash-intro.mp4" type="video/mp4"></video><div class="splash-actions">${btn('home',tx('CONTINUE','CONTINUAR'),true)}<div class="splash-credit"><span>${tx('Developed by','Desarrollado por')} <strong>KorposConsulting</strong></span><a href="https://korposconsulting.com" target="_blank" rel="noopener noreferrer">korposconsulting.com</a></div></div>`;
+   const video=root.querySelector?.('.splash-video');
+   if(video){
+    video.muted=true;
+    // Autoplay can be blocked by device power settings. The poster and Continue
+    // remain usable, and playback never gates navigation or starts a loop.
+    const playback=video.play();
+    playback?.catch(()=>{});
+   }
   }else if(screen==='credits'){
    root.innerHTML=`<header class="meta-header"><div><h1>${tx('CREDITS','CRÉDITOS')}</h1><p>TOP DOWN PADEL</p></div></header><div class="meta-content credits-content"><section><span class="credits-label">KORPOS STUDIOS</span><h2>Martín &amp; Max</h2><p>${tx('Developed by Martín and Max, game development veterans and founders of Korpos Studios, using AI-assisted development.','Desarrollado por Martín y Max, veteranos del desarrollo de videojuegos y fundadores de Korpos Studios, mediante desarrollo asistido por IA.')}</p><p class="credits-signature">${tx('Developed by','Desarrollado por')} <strong>KorposConsulting</strong><br><a href="https://korposconsulting.com" target="_blank" rel="noopener noreferrer">korposconsulting.com</a></p></section><section><span class="credits-label">${tx('TECHNOLOGY','TECNOLOGÍA')}</span><h2>${tx('Behind the game','Detrás del juego')}</h2><dl><dt>JavaScript · HTML · CSS</dt><dd>${tx('Game logic, menus and responsive interface.','Lógica del juego, menús e interfaz adaptable.')}</dd><dt>Canvas 2D</dt><dd>${tx('Court, characters, animation and visual effects.','Pista, personajes, animaciones y efectos visuales.')}</dd><dt>Web Audio API</dt><dd>${tx('Procedural sound effects and adaptive music.','Efectos sonoros procedurales y música adaptativa.')}</dd><dt>Cloudflare Workers · D1</dt><dd>${tx('Online services and multiplayer room state.','Servicios online y estado de salas multijugador.')}</dd><dt>Node.js · localStorage</dt><dd>${tx('Build and automated tests; progress saved on your device.','Compilación y pruebas automatizadas; progreso guardado en tu dispositivo.')}</dd></dl></section></div><footer class="meta-footer">${back()}</footer>`;
   }else if(screen==='controls'){

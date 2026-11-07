@@ -14,7 +14,7 @@ const excluded = /^(website|generaladmin|admin|telemetry)([.-]|$)/;
 let count = 0;
 for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
   if (!entry.isFile()) throw new Error(`Review asset subdirectory before packaging: ${entry.name}`);
-  if (excluded.test(entry.name) || entry.name.endsWith('.mp4')) continue;
+  if (excluded.test(entry.name) || entry.name === 'gameplay.mp4') continue;
   let content = fs.readFileSync(path.join(source, entry.name));
   if (entry.name.endsWith('.css')) content = readableCSS(content.toString());
   if (entry.name === 'index.html') {

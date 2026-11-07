@@ -1,0 +1,28 @@
+/* Keep the supplied portrait film intact in either game orientation. */
+#intro #meta-screen[data-view="splash"] {
+ display:block;padding:0;overflow:hidden;background:#071d32;
+}
+#intro #meta-screen[data-view="splash"]::before {display:none}
+#meta-screen[data-view="splash"] .splash-video {
+ position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+ background:#071d32;pointer-events:none;
+}
+#meta-screen[data-view="splash"] .splash-actions {
+ position:absolute;inset:auto 0 0;display:flex;flex-direction:column;
+ align-items:center;gap:10px;padding:36px 16px max(12px,env(safe-area-inset-bottom));
+ background:linear-gradient(transparent,rgba(3,15,29,.88));text-align:center;
+}
+#meta-screen[data-view="splash"] .splash-actions>button {
+ width:min(72%,420px);min-width:0;min-height:48px;padding:10px 24px;
+ font-size:clamp(22px,3cqw,32px);flex-shrink:0;
+}
+#meta-screen[data-view="splash"] .splash-credit {
+ display:flex;flex-direction:column;align-items:center;gap:2px;
+ color:#edf7ff;font:600 clamp(14px,1.4cqw,18px)/1.2 'Barlow Condensed',sans-serif;
+ text-shadow:0 2px 3px #000;
+}
+.splash-credit a {color:#65d8ff;text-decoration:underline;text-underline-offset:3px}
+@media (max-height:450px) {
+ #meta-screen[data-view="splash"] .splash-actions {gap:5px;padding-top:18px;padding-bottom:max(6px,env(safe-area-inset-bottom))}
+ #meta-screen[data-view="splash"] .splash-actions>button {min-height:40px;padding:6px 24px;font-size:22px}
+}
